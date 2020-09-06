@@ -1,6 +1,6 @@
 package hw1.questionOne.partB;
 
-class Data {
+public class Data {
     private  int key;
     private double sepalLength;
     private double sepalWidth;
@@ -8,7 +8,7 @@ class Data {
     private double petalWidth;
     private String irisClassName;
 
-    Data(int key, double sepalLength, double sepalWidth, double petalLength, double petalWidth, String irisClassName) {
+    public Data(int key, double sepalLength, double sepalWidth, double petalLength, double petalWidth, String irisClassName) {
         this.key = key;
         this.sepalLength = sepalLength;
         this.sepalWidth = sepalWidth;

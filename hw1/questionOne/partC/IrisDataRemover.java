@@ -1,10 +1,16 @@
-package hw1.questionOne.partB;
+package hw1.questionOne.partC;
+
+import hw1.questionOne.partB.Data;
+import hw1.questionOne.partB.IrisDataLinkedList;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
-public class IrisDataProcessor {
+public class IrisDataRemover {
     // Replace with your own iris data file.
     private static final String FILE_NAME = "/Users/folawiyo/Downloads/iris.csv";
     // For simplicity we provide the size of the data set.
@@ -15,13 +21,13 @@ public class IrisDataProcessor {
     private static final int PETAL_WIDTH_POSITION= 3;
     private static final int CLASS_NAME_POSITION= 4;
 
-    private static void read(){
+    private static IrisDataLinkedList readData(){
         final Scanner sc;
         try {
-             sc = new Scanner(new File(FILE_NAME));
+            sc = new Scanner(new File(FILE_NAME));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            return;
+            return null;
         }
 
         IrisDataLinkedList irisDataLinkedList = new IrisDataLinkedList(DATASET_SIZE);
@@ -42,9 +48,33 @@ public class IrisDataProcessor {
             );
         }
         sc.close();
+        return irisDataLinkedList;
     }
 
+    private static void separate(IrisDataLinkedList irisDataLinkedList){
+        int upperbound = 50;
+        if(irisDataLinkedList == null){
+            return;
+        }
+        List<Integer> randomPositions = collectRandomPositions(upperbound);
+
+        for(int position: randomPositions){
+            irisDataLinkedList.delete(position);
+            irisDataLinkedList.delete(position+upperbound);
+            irisDataLinkedList.delete(position+(upperbound*2));
+        }
+    }
+
+    private static List<Integer>  collectRandomPositions(int upperbound){
+        List<Integer> positions = new ArrayList<>();
+        Random random = new Random();
+        for(int i = 0;  i<10; i++){
+            positions .add(random.nextInt(upperbound));
+        }
+        return positions;
+    }
     public static void main(String[] args) {
-        read();
+        IrisDataLinkedList irisDataLinkedList = readData();
+        separate(irisDataLinkedList);
     }
 }

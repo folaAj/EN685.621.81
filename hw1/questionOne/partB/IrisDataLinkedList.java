@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * <p> It is backed by an array for each feature and the observation key is used to link to te feature data.
  **/
-class IrisDataLinkedList {
+public class IrisDataLinkedList {
     private final int size;
     private final int [] keys;
     private final double [] sepalLengths;
@@ -20,7 +20,7 @@ class IrisDataLinkedList {
      * Creates a {@link IrisDataLinkedList} instance.
      * @param size Number of the observations.
      **/
-    IrisDataLinkedList(int size){
+    public IrisDataLinkedList(int size){
         this.size = size;
         keys = new int[size];
 
@@ -37,7 +37,7 @@ class IrisDataLinkedList {
     }
 
     /** Inserts the observation in the linked list. */
-    void insert(Data data){
+    public void insert(Data data){
         if(data.getKey()<0 || data.getKey()>=size){
             throw new IllegalArgumentException("Key must be in range of 0 to "+(data.getKey()-1));
         }
@@ -53,7 +53,7 @@ class IrisDataLinkedList {
      * @param key The key from the {@link Data} object. It is
      *                       the position of the observation when reading the data.
      **/
-    void delete(int key){
+   public void delete(int key){
         if(key<0 || key>=size){
             throw new IllegalArgumentException("Key must be in range of 0 to "+(key-1));
         }
