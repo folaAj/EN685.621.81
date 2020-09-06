@@ -17,8 +17,6 @@ class IrisDataLinkedList {
     IrisDataLinkedList(int size){
         this.size = size;
         sepalLengths = new double[size];
-
-
     }
 
     /**
