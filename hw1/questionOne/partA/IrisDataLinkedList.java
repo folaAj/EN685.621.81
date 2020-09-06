@@ -34,7 +34,8 @@ class IrisDataLinkedList {
         sepalLengths[key] = sepalLength;
     }
 
-    /** Deletes the observation from the  linked list.
+    /**
+     * Deletes the observation from the  linked list.
      *
      * @param key  The position of the observation when reading the data.
      **/
@@ -44,10 +45,4 @@ class IrisDataLinkedList {
         }
         sepalLengths[key] = -1;
     }
-
-  void print(){
-        for(double sepalLength: sepalLengths){
-            System.out.println(sepalLength);
-        }
-  }
 }
