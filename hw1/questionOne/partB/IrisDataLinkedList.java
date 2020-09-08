@@ -1,6 +1,8 @@
 package hw1.questionOne.partB;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A linked list data structure for the Iris data set.
@@ -8,13 +10,13 @@ import java.util.Arrays;
  * <p> It is backed by an array for each feature and the observation key is used to link to te feature data.
  **/
 public class IrisDataLinkedList {
-    private final int size;
-    private final int [] keys;
-    private final double [] sepalLengths;
-    private final double [] sepalWidths;
-    private final double[] petalLengths;
-    private final double[] petalWidths;
-    private final String[] irisClassNames;
+    private final Set<Integer> usedKeys;
+    private  int size;
+    private  double [] sepalLengths;
+    private  double [] sepalWidths;
+    private  double[] petalLengths;
+    private  double[] petalWidths;
+    private  String[] irisClassNames;
 
     /**
      * Creates a {@link IrisDataLinkedList} instance.
@@ -22,8 +24,6 @@ public class IrisDataLinkedList {
      **/
     public IrisDataLinkedList(int size){
         this.size = size;
-        keys = new int[size];
-
         sepalLengths = new double[size];
         Arrays.fill(sepalLengths, -1);
         sepalWidths = new double[size];
@@ -33,11 +33,20 @@ public class IrisDataLinkedList {
         petalWidths = new double[size];
         Arrays.fill(petalWidths, -1);
         irisClassNames = new String[size];
-
+        usedKeys = new HashSet();
     }
 
     /** Inserts the observation in the linked list. */
     public void insert(Data data){
+        if(usedKeys.size() == size){
+            // double the arrays
+            sepalLengths = Arrays.copyOf(sepalLengths, size * 2);
+            sepalWidths = Arrays.copyOf(sepalWidths, size * 2);
+            petalLengths = Arrays.copyOf(petalLengths, size * 2);
+            petalWidths = Arrays.copyOf(petalWidths, size * 2);
+            size = size * 2;
+        }
+
         if(data.getKey()<0 || data.getKey()>=size){
             throw new IllegalArgumentException("Key must be in range of 0 to "+(data.getKey()-1));
         }
@@ -62,5 +71,40 @@ public class IrisDataLinkedList {
         petalLengths[key] = -1;
         petalWidths[key] = -1;
         irisClassNames[key] = null;
+    }
+
+
+    /**
+     * Returns the next feature date.
+     **/
+    Data successor(int key){
+        int successorKey = key + 1;
+        if(successorKey<0 || successorKey>=size){
+            throw new IllegalArgumentException("Key must be in range of 0 to "+(key-1));
+        }
+        return new Data(
+                key,
+                sepalLengths[successorKey],
+                sepalWidths[successorKey],
+               petalLengths[successorKey],
+                petalWidths[successorKey],
+                irisClassNames[successorKey]);
+    }
+
+    /**
+     * Returns the previous feature data.
+     **/
+    Data predecessor(int key){
+        int predecessorKey = key - 1;
+        if(predecessorKey<0 || predecessorKey>=size){
+            throw new IllegalArgumentException("Key must be in range of 0 to "+(key-1));
+        }
+        return new Data(
+                key,
+                sepalLengths[predecessorKey],
+                sepalWidths[predecessorKey],
+                petalLengths[predecessorKey],
+                petalWidths[predecessorKey],
+                irisClassNames[predecessorKey]);
     }
 }

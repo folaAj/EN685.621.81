@@ -73,6 +73,7 @@ public class IrisDataRemover {
         }
         return positions;
     }
+
     public static void main(String[] args) {
         IrisDataLinkedList irisDataLinkedList = readData();
         separate(irisDataLinkedList);
