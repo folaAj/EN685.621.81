@@ -51,7 +51,7 @@ public class IrisDataRemover {
         return irisDataLinkedList;
     }
 
-    private static void separate(IrisDataLinkedList irisDataLinkedList){
+    private static void remove20Percent(IrisDataLinkedList irisDataLinkedList){
         int upperbound = 50;
         if(irisDataLinkedList == null){
             return;
@@ -76,6 +76,6 @@ public class IrisDataRemover {
 
     public static void main(String[] args) {
         IrisDataLinkedList irisDataLinkedList = readData();
-        separate(irisDataLinkedList);
+        remove20Percent(irisDataLinkedList);
     }
 }

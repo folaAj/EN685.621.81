@@ -55,6 +55,7 @@ public class IrisDataLinkedList {
         petalLengths[data.getKey()] = data.getPetalLength();
         petalWidths[data.getKey()] = data.getPetalWidth();
         irisClassNames[data.getKey()] = data.getIrisClassName();
+        usedKeys.add(data.getKey());
     }
 
     /** Deletes the observation from the  linked list.
@@ -71,6 +72,7 @@ public class IrisDataLinkedList {
         petalLengths[key] = -1;
         petalWidths[key] = -1;
         irisClassNames[key] = null;
+        usedKeys.remove(key);
     }
 
 
