@@ -17,27 +17,33 @@ public class Data {
         this.irisClassName = irisClassName;
     }
 
-    int getKey() {
+    public int getKey() {
         return key;
     }
 
-    double getSepalLength() {
+    public double getSepalLength() {
         return sepalLength;
     }
 
-    double getSepalWidth() {
+    public double getSepalWidth() {
         return sepalWidth;
     }
 
-    double getPetalLength() {
+    public double getPetalLength() {
         return petalLength;
     }
 
-    double getPetalWidth() {
+    public double getPetalWidth() {
         return petalWidth;
     }
 
-    String getIrisClassName(){
+    public String getIrisClassName(){
         return irisClassName;
+    }
+
+    @Override
+    public String toString(){
+        return ""+this.key+", "+this.sepalLength+", "+this.sepalWidth+", "+this.petalLength+", "+this.petalWidth+", "
+                +this.irisClassName;
     }
 }

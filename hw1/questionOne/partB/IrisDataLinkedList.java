@@ -85,7 +85,7 @@ public class IrisDataLinkedList {
             throw new IllegalArgumentException("Key must be in range of 0 to "+(key-1));
         }
         return new Data(
-                key,
+                successorKey,
                 sepalLengths[successorKey],
                 sepalWidths[successorKey],
                petalLengths[successorKey],
@@ -102,11 +102,36 @@ public class IrisDataLinkedList {
             throw new IllegalArgumentException("Key must be in range of 0 to "+(key-1));
         }
         return new Data(
-                key,
+                predecessorKey,
                 sepalLengths[predecessorKey],
                 sepalWidths[predecessorKey],
                 petalLengths[predecessorKey],
                 petalWidths[predecessorKey],
                 irisClassNames[predecessorKey]);
+    }
+
+    /** Returns the number of elements in the linked list.*/
+    public int size(){
+        int count = 0;
+        for(double sepalLength: sepalLengths){
+            if(sepalLength!=-1){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i = 0; i<sepalWidths.length; i++){
+            stringBuilder.append(i).append(", ")
+                    .append(sepalLengths[i]).append(", ")
+                    .append(sepalWidths[i]).append(", ")
+                    .append(petalLengths[i]).append(", ")
+                    .append(petalWidths[i]).append(", ")
+                    .append(irisClassNames[i]).append("\n");
+        }
+        return stringBuilder.toString();
     }
 }

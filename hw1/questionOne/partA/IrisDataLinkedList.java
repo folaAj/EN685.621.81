@@ -79,4 +79,13 @@ class IrisDataLinkedList {
         }
         return sepalLengths[predecessorKey];
     }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(double sepalLength: sepalLengths){
+            stringBuilder.append(sepalLength).append(",");
+        }
+        return stringBuilder.toString();
+    }
 }
