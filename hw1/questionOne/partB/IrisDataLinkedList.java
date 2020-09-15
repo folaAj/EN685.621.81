@@ -88,7 +88,7 @@ public class IrisDataLinkedList {
                 successorKey,
                 sepalLengths[successorKey],
                 sepalWidths[successorKey],
-               petalLengths[successorKey],
+                petalLengths[successorKey],
                 petalWidths[successorKey],
                 irisClassNames[successorKey]);
     }

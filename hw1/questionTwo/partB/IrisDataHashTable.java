@@ -102,7 +102,7 @@ public class IrisDataHashTable {
      * Returns a hash of {@code k}.
      *
      * <p>We make use of universal hashing and a hash is generated from a family of hash functions for every instance.
-     * <p> Hash function is of the form ((ak + b) mod p) mod m where p us a prime number, p>m, m is the number of slots
+     * <p> Hash function is of the form ((ak + b) mod p) mod m where p is a prime number, p>m, m is the number of slots
      * available for hashing and a is an element in {1...p-1} and b is an element in {0...p-1}.
      **/
     private int hashLevel1(int k) {
@@ -113,7 +113,7 @@ public class IrisDataHashTable {
      * Returns a hash of {@code k}.
      *
      * <p>We make use of universal hashing and a hash is generated from a family of hash functions for every instance.
-     * <p> Hash function is of the form ((ak + b) mod p) mod m where p us a prime number, p>m, m is the number of slots
+     * <p> Hash function is of the form ((ak + b) mod p) mod m where p is a prime number, p>m, m is the number of slots
      * available for hashing and a is an element in {1...p-1} and b is an element in {0...p-1}.
      **/
     private int hashLevel2(int k){

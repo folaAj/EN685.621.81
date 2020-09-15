@@ -56,7 +56,7 @@ public class IrisDataRemover {
         for(int position: randomPositions){
             irisDataHashTable.remove(position);
             irisDataHashTable.remove(position+upperbound);
-            irisDataHashTable.remove(position+(upperbound*2));
+            irisDataHashTable.remove(position+(upperbound * 2));
         }
     }
 

@@ -58,7 +58,7 @@ public class IrisDataRemover {
         for(int position: randomPositions){
             irisDataLinkedList.delete(position);
             irisDataLinkedList.delete(position+upperbound);
-            irisDataLinkedList.delete(position+(upperbound*2));
+            irisDataLinkedList.delete(position+(upperbound * 2));
         }
     }
 
