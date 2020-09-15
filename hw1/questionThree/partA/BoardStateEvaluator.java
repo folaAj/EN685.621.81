@@ -26,8 +26,8 @@ public class BoardStateEvaluator {
         // Output: [-36, -18, 16, 1, -48, -34, -36, 20, -28, 2, 7, -24, -15, -21]
     }
 
-    private static int evaluate(int[][] board){
-        return calculateValue(X, board) - calculateValue(O, board);
+    private static int evaluate(int[][] boardState){
+        return calculateValue(X, boardState) - calculateValue(O, boardState);
     }
 
     private static final int calculateValue(int player, int [][] board){
