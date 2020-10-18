@@ -14,12 +14,12 @@ class TicTacToe {
     private Map<Coordinate, Integer> availableBestMovesReversed;
 
     TicTacToe(PlayerSymbol aiPlayerSymbol, PlayerSymbol humanPlayerSymbol){
-        board = new PlayerSymbol[3][3];
-        availableBestMoves = new TreeMap<>();
-        availableBestMovesReversed = new HashMap<>();
-        generateBestMoves();
+        this.board = new PlayerSymbol[3][3];
+        this.availableBestMoves = new TreeMap<>();
+        this.availableBestMovesReversed = new HashMap<>();
         this.aiPlayerSymbol = aiPlayerSymbol;
         this.humanPlayerSymbol = humanPlayerSymbol;
+        generateBestMoves();
     }
 
     /**
@@ -31,7 +31,7 @@ class TicTacToe {
      *  8 4 7
      *  3 9 2
      *  6 1 5
-     * */
+     */
     void generateBestMoves(){
         availableBestMoves.put(8, new Coordinate(0,0));
         availableBestMovesReversed.put(new Coordinate(0,0), 8);
@@ -69,9 +69,10 @@ class TicTacToe {
         return winningDirection(humanPlayerSymbol);
     }
 
-    /** Checks for a winning direction for the player with sybol {@code playerSymbol} and returns the {@lnk Coordinate}
+    /**
+     * Checks for a winning direction for the player with sybol {@code playerSymbol} and returns the {@lnk Coordinate}
      * of the winning place.
-     * */
+     */
     Coordinate winningDirection(PlayerSymbol playerSymbol){
         Coordinate winningDirection = Coordinate.EMPTY;
         // check horizontal
@@ -209,11 +210,11 @@ class TicTacToe {
     }
 
     /** Represents a board coordnate. */
-    static class Coordinate{
-        int row;
-        int col;
-        static final Coordinate EMPTY = new Coordinate(-1, -1);
-        Coordinate(int row, int col){
+    private static class Coordinate{
+        private int row;
+        private int col;
+        private static final Coordinate EMPTY = new Coordinate(-1, -1);
+        private Coordinate(int row, int col){
             this.row  = row;
             this.col = col;
         }
@@ -236,8 +237,8 @@ class TicTacToe {
     }
 
     enum PlayerSymbol {
-        X,
-        O;
+        X, O;
+
         @Override
         public String toString(){
             switch (this){
