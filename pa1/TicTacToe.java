@@ -166,7 +166,7 @@ class TicTacToe {
         board[bestMove.row][bestMove.col] = aiPlayerSymbol;
     }
 
-    /** Executes the human turn.
+    /** Executes the human's turn.
      *
      * @param row The row on the board the human wants to play.
      * @param col The column on the board the human wants to play.
