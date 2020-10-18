@@ -70,7 +70,7 @@ class TicTacToe {
     }
 
     /**
-     * Checks for a winning direction for the player with sybol {@code playerSymbol} and returns the {@lnk Coordinate}
+     * Checks for a winning direction for the player with symbol {@code playerSymbol} and returns the {@link Coordinate}
      * of the winning place.
      */
     Coordinate winningDirection(PlayerSymbol playerSymbol){
@@ -209,7 +209,7 @@ class TicTacToe {
 
     }
 
-    /** Represents a board coordnate. */
+    /** Represents a board coordinate. */
     private static class Coordinate{
         private int row;
         private int col;
@@ -236,6 +236,7 @@ class TicTacToe {
         }
     }
 
+    /** Enum representing either an X or O symbol. */
     enum PlayerSymbol {
         X, O;
 
