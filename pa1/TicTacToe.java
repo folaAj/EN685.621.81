@@ -61,18 +61,16 @@ class TicTacToe {
         availableBestMovesReversed.put(new Coordinate(2,2), 5);
     }
 
+    /** Checks if the AI has a win and returns the {@link Coordinate} for the winning play. */
     Coordinate winningPlace(){
        return winningDirection(aiPlayerSymbol);
     }
 
+    /** Checks if the AI needs to block the human player and returns the {@link Coordinate} to play the block.*/
     Coordinate blockingPlace(){
         return winningDirection(humanPlayerSymbol);
     }
 
-    /**
-     * Checks for a winning direction for the player with symbol {@code playerSymbol} and returns the {@link Coordinate}
-     * of the winning place.
-     */
     Coordinate winningDirection(PlayerSymbol playerSymbol){
         Coordinate winningDirection = Coordinate.EMPTY;
         // check horizontal
@@ -142,12 +140,17 @@ class TicTacToe {
         return  Coordinate.EMPTY;
     }
 
+    /** Removes the {@code coordinate} as the AI's potential best move.
+     *
+     * <p> Usually called after the human player has played.
+     */
     void updateAvailableBestMoves(Coordinate coordinate){
         Integer priority = availableBestMovesReversed.get(coordinate);
         availableBestMoves.remove(priority);
         availableBestMovesReversed.remove(coordinate);
     }
 
+    /** Executes AI's turn. */
     void aiPlay(){
         Coordinate toWin = winningPlace();
         if(toWin != Coordinate.EMPTY){
@@ -163,6 +166,11 @@ class TicTacToe {
         board[bestMove.row][bestMove.col] = aiPlayerSymbol;
     }
 
+    /** Executes the human turn.
+     *
+     * @param row The row on the board the human wants to play.
+     * @param col The column on the board the human wants to play.
+     */
     void humanPlay(int row, int col){
         board[row][col] = humanPlayerSymbol;
         updateAvailableBestMoves(new Coordinate(row, col));
