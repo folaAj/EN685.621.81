@@ -1,0 +1,18 @@
+Starting Board State
+[[null, null, null], [null, null, null], [null, null, null]]
+Human Player played
+[[null, null, null], [null, O, null], [null, null, null]]
+Ai Player played
+[[X, null, null], [null, O, null], [null, null, null]]
+Human Player played
+[[X, O, null], [null, O, null], [null, null, null]]
+Ai Player played
+[[X, O, null], [null, O, null], [null, X, null]]
+Human Player played
+[[X, O, O], [null, O, null], [null, X, null]]
+Ai Player played
+[[X, O, O], [null, O, null], [X, X, null]]
+Human Player played
+[[X, O, O], [null, O, null], [X, X, O]]
+Ai Player played
+[[X, O, O], [X, O, null], [X, X, O]]
