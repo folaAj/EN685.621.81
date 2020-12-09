@@ -1,0 +1,36 @@
+AI draws with human:
+Starting Board State
+[[null, null, null], [null, null, null], [null, null, null]]
+Human Player played
+[[null, null, null], [null, O, null], [null, null, null]]
+Ai Player played
+[[null, null, null], [null, O, null], [null, null, X]]
+Human Player played
+[[null, O, null], [null, O, null], [null, null, X]]
+Ai Player played
+[[null, O, null], [null, O, null], [null, X, X]]
+Human Player played
+[[null, O, null], [null, O, null], [O, X, X]]
+Ai Player played
+[[null, O, X], [null, O, null], [O, X, X]]
+Human Player played
+[[null, O, X], [null, O, O], [O, X, X]]
+Ai Player played
+[[null, O, X], [X, O, O], [O, X, X]]
+
+
+AI wins:
+Starting Board State
+[[null, null, null], [null, null, null], [null, null, null]]
+Human Player played
+[[null, null, null], [null, O, null], [null, null, null]]
+Ai Player played
+[[null, null, null], [null, O, null], [null, null, X]]
+Human Player played
+[[null, O, null], [null, O, null], [null, null, X]]
+Ai Player played
+[[null, O, null], [null, O, null], [null, X, X]]
+Human Player played
+[[null, O, O], [null, O, null], [null, X, X]]
+Ai Player played
+[[null, O, O], [null, O, null], [X, X, X]]
